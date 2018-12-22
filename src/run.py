@@ -5,7 +5,7 @@ def main():
     init = np.matrix('0;0;1')
     # fb = np.array([0,0,1,0,0,0])
     srm = np.matrix('0 1 1; 1 0 0; 0 1 0')
-    n_of_bits = 300
+    n_of_bits = 900
 
     for i1 in range (1,n_of_bits):
         q_pow = proceed_ssrg_np_pow(i1, init, srm)
@@ -26,7 +26,9 @@ def write_csv(m1, m2, filename, iter):
 
 
 def proceed_ssrg_recursion(n,x,srm):
-    if n == 1 :
+    if n == 0 :
+        return x %2
+    elif n == 1 :
         return srm*x %2
     else:
         return srm * proceed_ssrg_recursion(n-1,x,srm) %2
