@@ -2,10 +2,10 @@ import numpy as np
 import csv
 
 def main():
-    init = np.matrix('0;0;1')
+    init = np.matrix('1;0;0;0')
     # fb = np.array([0,0,1,0,0,0])
-    srm = np.matrix('0 1 1; 1 0 0; 0 1 0')
-    n_of_bits = 900
+    srm = np.matrix('1 0 0 1; 1 0 0 0; 0 1 0 0; 0 0 1 0')
+    n_of_bits = 190
 
     for i1 in range (1,n_of_bits):
         q_pow = proceed_ssrg_np_pow(i1, init, srm)
