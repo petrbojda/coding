@@ -1,5 +1,11 @@
+#!/usr/bin/env python
+
 import numpy as np
 import csv
+import logging
+import logging.config
+
+class NoLoggerConfiguration(Exception): pass
 
 def main():
     init = np.matrix('1;0;0;0')
@@ -39,5 +45,9 @@ def proceed_ssrg_np_pow(n,x,srm):
     return (a * x)%2
 
 
+
+
 if __name__ == '__main__':
+    config_data_file = "../cnf/analysis.cnf"
+    conf_data, data_preprocessor_settings = cnf_file_parser(config_data_file)
     main()

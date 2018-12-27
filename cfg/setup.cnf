@@ -1,0 +1,13 @@
+# Configuration file for the SSRG and code analysis to setup paths to files and modules.
+# Created as a part of the project at the University of Defence, Czech Republic
+# by Petr Bojda, 12-27-2018.
+
+[Datasets]
+data_01: data01/
+data_02: data00/
+
+[Paths]
+home_dir: /home/petr/Projects/Bajer/coding/
+data_dir: /home/petr/Projects/Bajer/coding//data/
+modules_dir: /home/petr/Projects/Bajer/coding//srcpy/
+
