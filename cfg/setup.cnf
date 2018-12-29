@@ -3,8 +3,8 @@
 # by Petr Bojda, 12-27-2018.
 
 [paths]
-#home_dir: C:\Users\petrb\coding2/
-home_dir: ../
+home_dir: C:\Users\petrb\Projects\unob\coding2\
+#home_dir: ../
 data_dir: data/
 modules_dir: srcpy/
 logger_dir: log/

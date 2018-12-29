@@ -17,6 +17,9 @@ def main(setup_data):
     print("SSRG state output file", setup_data["data_state"])
     print("Coder PRN output file", setup_data["data_code"])
 
+    setup.logger_setup(setup_data["logcnf"],setup_data["log"])
+    logger = logging.getLogger(__name__)
+    logger.info("Main function started now.")
 
     init = np.matrix('1;0;0;0')
     # fb = np.array([0,0,1,0,0,0])

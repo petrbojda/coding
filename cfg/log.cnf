@@ -17,7 +17,7 @@ propagate=0
 class=FileHandler
 level=DEBUG
 formatter=fileFormatter
-args=('../logs/analysis.log','w')
+args=('../logs/init.log','w')
 
 [formatter_fileFormatter]
 format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
