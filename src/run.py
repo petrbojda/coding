@@ -2,12 +2,22 @@
 
 import numpy as np
 import csv
+import setup
 import logging
 import logging.config
 
 class NoLoggerConfiguration(Exception): pass
 
-def main():
+def main(setup_data):
+
+    print("Coder configuration file", setup_data["cnf"])
+    print("Logger configuration file", setup_data["logcnf"])
+    print("Logger output file", setup_data["log"])
+    print("Python files", setup_data["srcpy"])
+    print("SSRG state output file", setup_data["data_state"])
+    print("Coder PRN output file", setup_data["data_code"])
+
+
     init = np.matrix('1;0;0;0')
     # fb = np.array([0,0,1,0,0,0])
     srm = np.matrix('1 0 0 1; 1 0 0 0; 0 1 0 0; 0 0 1 0')
@@ -16,7 +26,7 @@ def main():
     for i1 in range (1,n_of_bits):
         q_pow = proceed_ssrg_np_pow(i1, init, srm)
         q_rec = proceed_ssrg_recursion(i1, init, srm)
-        write_csv(q_pow, q_rec, "../data/test_data.csv", i1)
+        write_csv(q_pow, q_rec, setup_data["data_state"], i1)
 
 
 def write_csv(m1, m2, filename, iter):
@@ -48,6 +58,7 @@ def proceed_ssrg_np_pow(n,x,srm):
 
 
 if __name__ == '__main__':
-    config_data_file = "../cnf/analysis.cnf"
-    conf_data, data_preprocessor_settings = cnf_file_parser(config_data_file)
-    main()
+    setup_file = setup.parse_CMDLine()
+    print (setup_file)
+    setup_data = setup.setup_file_parser(setup_file)
+    main(setup_data)

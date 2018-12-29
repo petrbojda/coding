@@ -2,12 +2,18 @@
 # Created as a part of the project at the University of Defence, Czech Republic
 # by Petr Bojda, 12-27-2018.
 
-[Datasets]
-data_01: data01/
-data_02: data00/
+[paths]
+#home_dir: C:\Users\petrb\coding2/
+home_dir: ../
+data_dir: data/
+modules_dir: srcpy/
+logger_dir: log/
+config_dir: cfg/
 
-[Paths]
-home_dir: /home/petr/Projects/Bajer/coding/
-data_dir: /home/petr/Projects/Bajer/coding//data/
-modules_dir: /home/petr/Projects/Bajer/coding//srcpy/
+[filenames]
+ssrg_state_output_filename: state_output.csv
+coder_output_filename: coder_output.csv
+logger_filename: run.log
+config_filename: analysis.cnf
+logger_config_filename: log.cnf
 

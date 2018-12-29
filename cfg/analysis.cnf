@@ -1,3 +1,6 @@
 # Configuration file for the SSRG and code analysis.
 # Created as a part of the project at the University of Defence, Czech Republic
 # by Petr Bojda, 12-27-2018.
+
+[SSRG0]
+feedback:
