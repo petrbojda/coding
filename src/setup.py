@@ -7,7 +7,7 @@ import logging.config
 def setup_file_parser(cnf_file):
     # Reads the configuration file
     config = configparser.ConfigParser()
-    config.read(cnf_file)  # "./setup.cnf"
+    config.read(cnf_file)  # "../setup.cnf"
 
     # Read a path to a folder with python modules
     path_home = config.get('paths', 'home_dir')
@@ -28,15 +28,17 @@ def setup_file_parser(cnf_file):
     filename_log = config.get('filenames', 'logger_filename')
     # Read a name of the cnf file to configure coder and analysis
     filename_cnf = config.get('filenames', 'config_filename')
+    # Read a name of the cnf file to setup basic paths to files
+    filename_setup = config.get('filenames', 'setup_filename')
     # Read a name of the cnf file to configure logger
     filename_log_cnf = config.get('filenames', 'logger_config_filename')
 
     setup_data = {"srcpy": path_home + path_srcpy,
                   "data_state": path_home + path_data + filename_state,
                   "data_code": path_home + path_data + filename_code,
+                  "setup":path_home + path_cnf + filename_setup,
                   "cnf": path_home + path_cnf + filename_cnf,
-                  "log": path_home + path_log + filename_log,
-                  "logcnf": path_home + path_cnf + filename_log_cnf}
+                  "log": path_home + path_log + filename_log}
     return setup_data
 
 
@@ -59,8 +61,7 @@ def parse_CMDLine():
     return setup_file
 
 
-def logger_setup(cnf_logger_file,logger_file):
+def logger_setup(cnf_logger_file):
     logging.config.fileConfig(cnf_logger_file)
-    logging.basicConfig(filename=logger_file)
     logger = logging.getLogger(__name__)
     logger.info("Logger implemented and analysis framework starter")

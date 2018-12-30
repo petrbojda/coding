@@ -2,18 +2,50 @@
 # Created as a part of the project at the University of Defence, Czech Republic
 # by Petr Bojda, 12-27-2018.
 
+############### basic setup of the analysis #############
+# setting paths to folders
 [paths]
-home_dir: C:\Users\petrb\Projects\unob\coding2\
-#home_dir: ../
+#home_dir: C:\Users\petrb\Projects\unob\coding2\
+home_dir: ../
 data_dir: data/
 modules_dir: srcpy/
 logger_dir: log/
 config_dir: cfg/
 
+# setting names of particular files
 [filenames]
 ssrg_state_output_filename: state_output.csv
 coder_output_filename: coder_output.csv
 logger_filename: run.log
 config_filename: analysis.cnf
+setup_filename: setup.cnf
 logger_config_filename: log.cnf
 
+############### setting parameters of the logger ########
+[loggers]
+keys=root
+
+[handlers]
+keys=fileHandler
+
+[formatters]
+keys=fileFormatter, fileFormatter_line_continuous
+
+[logger_root]
+level=DEBUG
+handlers=fileHandler
+qualname=test_implementing
+propagate=0
+
+[handler_fileHandler]
+class=FileHandler
+level=DEBUG
+formatter=fileFormatter
+args=('../log/run.log','w')
+
+[formatter_fileFormatter]
+format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+datefmt=
+
+[formatter_fileFormatter_line_continuous]
+format=\x1b[80D\x1b[1A\x1b[K%(message)s
