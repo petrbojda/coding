@@ -23,29 +23,29 @@ logger_config_filename: log.cnf
 
 ############### setting parameters of the logger ########
 [loggers]
-keys=root
+keys = root
 
 [handlers]
-keys=fileHandler
+keys = fileHandler
 
 [formatters]
-keys=fileFormatter, fileFormatter_line_continuous
+keys = fileFormatter, fileFormatter_line_continuous
 
 [logger_root]
-level=DEBUG
-handlers=fileHandler
-qualname=test_implementing
-propagate=0
+level = DEBUG
+handlers = fileHandler
+qualname = test_implementing
+propagate = 0
 
 [handler_fileHandler]
-class=FileHandler
-level=DEBUG
-formatter=fileFormatter
-args=('../log/run.log','w')
+class = FileHandler
+level = DEBUG
+formatter = fileFormatter
+args = ('../log/run.log','w')
 
 [formatter_fileFormatter]
-format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
-datefmt=
+format = %(asctime)s - %(name)s - %(levelname)s - %(message)s
+datefmt =
 
 [formatter_fileFormatter_line_continuous]
-format=\x1b[80D\x1b[1A\x1b[K%(message)s
+format = \x1b[80D\x1b[1A\x1b[K%(message)s

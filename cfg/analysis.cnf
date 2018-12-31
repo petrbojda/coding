@@ -2,5 +2,10 @@
 # Created as a part of the project at the University of Defence, Czech Republic
 # by Petr Bojda, 12-27-2018.
 
-[SSRG0]
-feedback:
+[coder]
+polynomial_degree = 5
+number_of_periods = 3
+
+[baseband]
+chip_rate = 1e3
+oversampling_factor = 24

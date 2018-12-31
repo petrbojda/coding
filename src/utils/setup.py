@@ -4,7 +4,7 @@ import logging
 import logging.config
 
 
-def setup_file_parser(cnf_file):
+def setup_cnf_file_parser(cnf_file):
     # Reads the configuration file
     config = configparser.ConfigParser()
     config.read(cnf_file)  # "../setup.cnf"
@@ -65,3 +65,26 @@ def logger_setup(cnf_logger_file):
     logging.config.fileConfig(cnf_logger_file)
     logger = logging.getLogger(__name__)
     logger.info("Logger implemented and analysis framework starter")
+
+def analysis_cnf_file_parser(cnf_file):
+    # Reads the configuration file
+    config = configparser.ConfigParser()
+    config.read(cnf_file)  # "../analysis.cnf"
+
+    chip_rate = float(config.get('baseband', 'chip_rate'))
+    oversampling_factor = float(config.get('baseband', 'oversampling_rate'))
+    n_o_periods = int(config.get('coder', 'number_of_periods'))
+    poly_degree = int(config.get('coder', 'polynomial_degree'))
+
+    code_period = 2**poly_degree - 1
+    n_o_samples = n_o_periods * code_period * oversampling_factor
+
+    analysis_setup = {"chip_rate": chip_rate,
+                      "oversampling_factor": oversampling_factor,
+                      "poly_degree": poly_degree,
+                      "n_o_periods": n_o_periods,
+                      "code_period":code_period,
+                      "n_o_samples":n_o_samples}
+
+    return analysis_setup
+
