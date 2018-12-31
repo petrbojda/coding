@@ -2,6 +2,7 @@ import configparser
 import argparse
 import logging
 import logging.config
+import numpy as np
 
 
 def setup_cnf_file_parser(cnf_file):
@@ -72,9 +73,12 @@ def analysis_cnf_file_parser(cnf_file):
     config.read(cnf_file)  # "../analysis.cnf"
 
     chip_rate = float(config.get('baseband', 'chip_rate'))
-    oversampling_factor = float(config.get('baseband', 'oversampling_rate'))
+    oversampling_factor = float(config.get('baseband', 'oversampling_factor'))
     n_o_periods = int(config.get('coder', 'number_of_periods'))
-    poly_degree = int(config.get('coder', 'polynomial_degree'))
+    ssrg_init = np.matrix(np.fromstring(config.get('coder', 'ssrg_init'), dtype=int, sep=','))
+    poly_degree = ssrg_init.size
+    ssrg_fb = np.matrix(np.fromstring(config.get('coder', 'ssrg_fb'), dtype=int, sep=','))
+
 
     code_period = 2**poly_degree - 1
     n_o_samples = n_o_periods * code_period * oversampling_factor
@@ -82,6 +86,8 @@ def analysis_cnf_file_parser(cnf_file):
     analysis_setup = {"chip_rate": chip_rate,
                       "oversampling_factor": oversampling_factor,
                       "poly_degree": poly_degree,
+                      "ssrg_init": ssrg_init,
+                      "ssrg_fb": ssrg_fb,
                       "n_o_periods": n_o_periods,
                       "code_period":code_period,
                       "n_o_samples":n_o_samples}

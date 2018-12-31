@@ -3,7 +3,8 @@
 # by Petr Bojda, 12-27-2018.
 
 [coder]
-polynomial_degree = 5
+ssrg_init = 1,0,0,0,0
+ssrg_fb = 0,0,1,0,1
 number_of_periods = 3
 
 [baseband]

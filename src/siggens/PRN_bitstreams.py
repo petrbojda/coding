@@ -6,7 +6,18 @@ GNSS and Wireless Communications* by Jack K. Holmes.
 Returned binary sequences are numpy arrays of the type *bool*.
 """
 import numpy as np
+import logging
 
+def build_srm(fb_vector):
+    logger = logging.getLogger(__name__)
+    logger.debug("build_srm function started.")
+    srm = np.matrix(np.identity(fb_vector.size - 1))
+    logger.debug("srm matrix , step 1 %s", srm)
+    z = np.matrix(np.zeros(fb_vector.size -1))
+    logger.debug("srm matrix , step 2, append vector %s", z.T)
+    srm = np.append(srm,z.T,axis=1)
+    srm = np.append(fb_vector,srm,axis=0)
+    return srm
 
 def proceed_ssrg_recursion(n,x,srm):
     if n == 0 :

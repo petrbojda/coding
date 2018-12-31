@@ -33,22 +33,21 @@ def main(setup_data):
 
     analysis_setup_date = stp.analysis_cnf_file_parser(setup_data["cnf"])
     logger.debug("%s file read to setup analysis", setup_data["cnf"])
-    f_sampl = analysis_setup_date["f_sampl"]
-    logger.debug("sampling rate %s kHz", analysis_setup_date["f_sampl"])
-    T_int = analysis_setup_date["T_int"]
-    logger.debug("signal length %s ms", analysis_setup_date["T_int"])
 
-    ##################### time related simulation ######################
-    t = np.arange(0, T_int, 1 / f_sampl)  # time axis
-    logger.debug("time axis created, length  %s samples", t.size)
+
+
 
     ##################### code generator ###############################
-    init = np.matrix('1;0;0;0')
-    # fb = np.array([0,0,1,0,0,0])
-    srm = np.matrix('1 0 0 1; 1 0 0 0; 0 1 0 0; 0 0 1 0')
-    n_of_bits = analysis_setup_date["number_of_bits"]
+    ssrg_init = analysis_setup_date["ssrg_init"]
+    logger.debug("initial state of the ssrg, ssrg_init =  %s ", ssrg_init)
+    ssrg_fb = analysis_setup_date["ssrg_fb"]
+    logger.debug("feedback vector of the ssrg, ssrg_fb =  %s ", ssrg_fb)
+    srm = prn.build_srm(ssrg_fb)
+    logger.debug("srm matrix created, srm =  %s ", srm)
+
+    n_of_bits = analysis_setup_date["code_period"] * analysis_setup_date["n_o_periods"]
     logger.debug("coder setup - binary sequence generator, number of generated bits %s ", n_of_bits)
-    x = init
+    x = ssrg_init.T
     code = np.zeros(1)
     for i1 in range (1,n_of_bits):
         x = prn.proceed_ssrg_onestep(x, srm)
@@ -56,6 +55,10 @@ def main(setup_data):
         csvi.write_csv(x[-1], setup_data["data_code"], i1)
         code = np.append(code,x[-1])
     logger.debug("coder run - binary sequence generated, number of bits %s ", code.size)
+
+    #################### time related simulation ######################
+    # t = np.arange(0, T_int, 1 / f_sampl)  # time axis
+    # logger.debug("time axis created, length  %s samples", t.size)
 
     # f = ut.freq_fr_time (t)				# frequency axis
     tc = ut.corr_fr_time(t)  # correlation time axis
