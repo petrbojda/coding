@@ -14,25 +14,27 @@ def build_srm(fb_vector):
     srm = np.matrix(np.identity(fb_vector.size - 1))
     logger.debug("srm matrix , step 1 %s", srm)
     z = np.matrix(np.zeros(fb_vector.size -1))
+    z = z.astype(int)
     logger.debug("srm matrix , step 2, append vector %s", z.T)
     srm = np.append(srm,z.T,axis=1)
     srm = np.append(fb_vector,srm,axis=0)
     return srm
 
-def proceed_ssrg_recursion(n,x,srm):
-    if n == 0 :
-        return x %2
-    elif n == 1 :
-        return srm*x %2
-    else:
-        return srm * proceed_ssrg_recursion(n-1,x,srm) %2
+# def proceed_ssrg_recursion(n,x,srm):
+#     if n == 0 :
+#         return int(x %2)
+#     elif n == 1 :
+#         return int(srm*x %2)
+#     else:
+#         return int(srm * proceed_ssrg_recursion(n-1,x,srm) %2)
 
 def proceed_ssrg_np_pow(n,x,srm):
-    a = srm**n
-    return (a * x)%2
+    a = ((srm**n) * x)%2
+    return a.astype(int)
 
 def proceed_ssrg_onestep(x,srm):
-    return (srm * x)%2
+    out = (srm * x)%2
+    return out.astype(int)
 
 
 def ssrg(init_reg, fb_reg, **args):
