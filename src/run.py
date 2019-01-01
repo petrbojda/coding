@@ -44,9 +44,11 @@ def main(setup_data):
     logger.debug("feedback vector of the ssrg, ssrg_fb =  %s ", ssrg_fb)
     srm = prn.build_srm(ssrg_fb)
     logger.debug("srm matrix created, srm =  %s ", srm)
+    logger.debug("Number of bits in one period of the code N = %s bits ", analysis_setup_date["code_period"])
+    logger.debug("Number of periods being generated %s ", analysis_setup_date["n_o_periods"])
 
     n_of_bits = analysis_setup_date["code_period"] * analysis_setup_date["n_o_periods"]
-    logger.debug("coder setup - binary sequence generator, number of generated bits %s ", n_of_bits)
+    logger.debug("code generator setup - number of generated bits %s ", n_of_bits)
     x = ssrg_init.T
     code = np.zeros(1)
     for i1 in range (1,n_of_bits):
@@ -59,6 +61,11 @@ def main(setup_data):
     #################### time related simulation ######################
     f_sampl = analysis_setup_date["chip_rate"] * analysis_setup_date["oversampling_factor"]
     logger.debug("sampling rate is %s kHz", f_sampl)
+    logger.debug("sampling period is %s ms", 1/f_sampl)
+    logger.debug("chiprate is %s kHz", analysis_setup_date["chip_rate"])
+    Ts = 1/analysis_setup_date["chip_rate"] # transmitted symbol interval or a chip length
+    logger.debug("chip length is %s ms", Ts)
+    logger.debug("code period is %s ms", analysis_setup_date["code_period"] / analysis_setup_date["chip_rate"])
     T_int = analysis_setup_date["n_o_samples"] / f_sampl
     logger.debug("time axis  length  is %s ms", T_int)
     t = np.arange(0, T_int, 1 / f_sampl)  # time axis
@@ -68,10 +75,14 @@ def main(setup_data):
     tc = ut.corr_fr_time(t)  # correlation time axis
     logger.debug("time axis correlation created, length  %s samples", tc.size)
 
-    tau = 1  # time acceleration factor
-    Ts = 10e-3  # transmitted symbol interval
+    tau = analysis_setup_date["time_accelerating_factor"]  # time acceleration factor
+    logger.debug("time acceleration factor is %s", tau)
     Tstr = Ts * tau  # Nyquist's symbol interval
-    td = 0  # initial delay of the sequence (time offset)
+    logger.debug("Transmitted (accelerated) chip length is %s ms", Tstr)
+    td = analysis_setup_date["time_offset"]  # initial delay of the sequence (time offset)
+    logger.debug("Time offset (delay) of transmitted baseband signal is %s ms", td)
+
+
 
     # Time Domain
     # a1 = gen.rcos_tr(t, Tstr, td + Tstr / 2, x, Ts, 1.0)
@@ -83,7 +94,7 @@ def main(setup_data):
     A1_c = signal.correlate(c, c, 'full')
 
     ##################### Plots ###########################
-    f1 = plt.figure(1, figsize=(10, 15), dpi=300)
+    f1 = plt.figure(1, figsize=(10, 7), dpi=300)
 
     #  Time domain
     f1ax1 = f1.add_subplot(111)
@@ -97,7 +108,7 @@ def main(setup_data):
     f1ax1.set_ylabel('Baseband - voltage')
     # f1ax1.axis([0, 0.15, -0.3, 1.3])
 
-    f2 = plt.figure(2, figsize=(10, 15), dpi=300)
+    f2 = plt.figure(2, figsize=(10, 7), dpi=300)
 
     #  Autocorrelated
     f2ax1 = f2.add_subplot(111)
@@ -111,8 +122,8 @@ def main(setup_data):
     f2ax1.set_ylabel('Baseband - voltage')
     # f2ax1.axis([-0.25, 0.25, -100, 253000])
 
-    f1.savefig('gold_accelerated.eps', format='eps')
-    f2.savefig('gold_accelerated_autocorr.eps', format='eps')
+    f1.savefig('ssrgout_timedomain.png', format='png')
+    f2.savefig('ssrgout_autocorr.png', format='png')
     # f3.savefig('gold_accelerated_crosscorr.eps', format='eps')
     # f4.savefig('gold_accelerated_fft.eps', format='eps')
     plt.show()

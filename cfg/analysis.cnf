@@ -5,8 +5,12 @@
 [coder]
 ssrg_init = 1,0,0,0,0
 ssrg_fb = 0,0,1,0,1
-number_of_periods = 3
+number_of_periods = 2
 
 [baseband]
 chip_rate = 1e3
 oversampling_factor = 24
+
+[signaling]
+time_accelerating_factor = .8
+time_offset = 0

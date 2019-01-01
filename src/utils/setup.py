@@ -79,6 +79,9 @@ def analysis_cnf_file_parser(cnf_file):
     poly_degree = ssrg_init.size
     ssrg_fb = np.matrix(np.fromstring(config.get('coder', 'ssrg_fb'), dtype=int, sep=','))
 
+    tau = float(config.get('signaling', 'time_accelerating_factor'))
+    td = float(config.get('signaling', 'time_offset'))
+
 
     code_period = 2**poly_degree - 1
     n_o_samples = n_o_periods * code_period * oversampling_factor
@@ -90,7 +93,9 @@ def analysis_cnf_file_parser(cnf_file):
                       "ssrg_fb": ssrg_fb,
                       "n_o_periods": n_o_periods,
                       "code_period":code_period,
-                      "n_o_samples":n_o_samples}
+                      "n_o_samples":n_o_samples,
+                      "time_accelerating_factor": tau,
+                      "time_offset": td}
 
     return analysis_setup
 

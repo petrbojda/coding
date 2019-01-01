@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="073aaf8e-4880-4193-b87a-7fcb1a82fe06" name="Default Changelist" comment="">
+    <list default="true" id="073aaf8e-4880-4193-b87a-7fcb1a82fe06" name="Default Changelist" comment="timedomain and correlation domain plots implemented, only a fragment of the code period appears in plot over t axis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfg/analysis.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/cfg/analysis.cnf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/state_output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/state_output.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/siggens/PRN_bitstreams.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/siggens/PRN_bitstreams.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/siggens/one_pulse.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/siggens/one_pulse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/siggens/train_pulse.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/siggens/train_pulse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/setup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,14 +15,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7741348">
+    <splitter split-orientation="horizontal" split-proportion="0.62527883">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/run.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="101">
-                  <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+                <state relative-caret-position="177">
+                  <caret line="71" column="65" lean-forward="true" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
                 </state>
               </provider>
             </entry>
@@ -31,7 +30,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/siggens/train_pulse.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="305">
+                <state relative-caret-position="-409">
                   <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
                 </state>
               </provider>
@@ -58,8 +57,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/siggens/PRN_bitstreams.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="16">
-                  <caret line="22" selection-start-line="22" selection-start-column="2" selection-end-line="28" selection-end-column="64" />
+                <state relative-caret-position="-443">
+                  <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
                   <folding>
                     <element signature="e#302#320#0" expanded="true" />
                   </folding>
@@ -70,8 +69,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/log/run.log">
               <provider selected="true" editor-type-id="LogFileEditorProvider">
-                <state relative-caret-position="311">
-                  <caret line="29" column="84" lean-forward="true" selection-start-line="29" selection-start-column="84" selection-end-line="29" selection-end-column="84" />
+                <state relative-caret-position="391">
+                  <caret line="38" column="87" lean-forward="true" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
                 </state>
               </provider>
             </entry>
@@ -81,19 +80,10 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/cfg/setup.cnf">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="42">
-                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/utils/setup.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+                <state relative-caret-position="345">
+                  <caret line="97" column="34" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
                   </folding>
@@ -102,10 +92,30 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cfg/setup.cnf">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="56">
+                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cfg/analysis.cnf">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+                <state relative-caret-position="238">
+                  <caret line="14" column="24" selection-start-line="14" selection-end-line="14" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data/coder_output.csv">
+              <provider editor-type-id="csv-text-editor" />
+              <provider selected="true" editor-type-id="csv-table-editor">
+                <state showInfoPanel="true" rowLines="1">
+                  <column index="0" width="54" />
+                  <column index="1" width="70" />
                 </state>
               </provider>
             </entry>
@@ -133,13 +143,13 @@
         <option value="$PROJECT_DIR$/cfg/setup.cnf" />
         <option value="$PROJECT_DIR$/src/setup.py" />
         <option value="$PROJECT_DIR$/src/utils/csv_interfaces.py" />
-        <option value="$PROJECT_DIR$/cfg/analysis.cnf" />
-        <option value="$PROJECT_DIR$/src/utils/setup.py" />
         <option value="$PROJECT_DIR$/data/state_output.csv" />
         <option value="$PROJECT_DIR$/data/coder_output.csv" />
         <option value="$PROJECT_DIR$/src/siggens/PRN_bitstreams.py" />
         <option value="$PROJECT_DIR$/src/siggens/one_pulse.py" />
         <option value="$PROJECT_DIR$/src/siggens/train_pulse.py" />
+        <option value="$PROJECT_DIR$/cfg/analysis.cnf" />
+        <option value="$PROJECT_DIR$/src/utils/setup.py" />
         <option value="$PROJECT_DIR$/src/run.py" />
       </list>
     </option>
@@ -307,14 +317,21 @@
       <option name="project" value="LOCAL" />
       <updated>1546271090551</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="timedomain and correlation domain plots implemented, only a fragment of the code period appears in plot over t axis">
+      <created>1546348300276</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1546348300276</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47674417" visible="true" weight="0.18364312" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47674417" weight="0.18364312" />
       <window_info id="Structure" order="1" sideWeight="0.5232558" side_tool="true" weight="0.18364312" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -332,6 +349,25 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47674417" visible="true" weight="0.18364312" />
+      <window_info id="Structure" order="1" sideWeight="0.5232558" side_tool="true" weight="0.18364312" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32980132" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32980132" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32980132" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.43046358" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ssrg recursion generator working" />
@@ -340,7 +376,8 @@
     <MESSAGE value="logger implemented, works without errors" />
     <MESSAGE value="synch" />
     <MESSAGE value="ssrg configuration and initialization via cnf file implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="ssrg configuration and initialization via cnf file implemented" />
+    <MESSAGE value="timedomain and correlation domain plots implemented, only a fragment of the code period appears in plot over t axis" />
+    <option name="LAST_COMMIT_MESSAGE" value="timedomain and correlation domain plots implemented, only a fragment of the code period appears in plot over t axis" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../Anaconda3/envs/scipy_matplot/Lib/configparser.py" />
@@ -363,46 +400,10 @@
     <entry file="file://$PROJECT_DIR$/../unob2018-master/unob2018-master/sim/python/siggens/train_pulse.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cfg/analysis.cnf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/siggens/PRN_bitstreams.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="22" selection-start-line="22" selection-start-column="2" selection-end-line="28" selection-end-column="64" />
-          <folding>
-            <element signature="e#302#320#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/csv_interfaces.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/coder_output.csv">
-      <provider editor-type-id="csv-text-editor" />
-      <provider selected="true" editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" rowLines="1">
-          <column index="0" width="54" />
-          <column index="1" width="70" />
         </state>
       </provider>
     </entry>
@@ -415,10 +416,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cfg/setup.cnf">
+    <entry file="file://$PROJECT_DIR$/src/siggens/PRN_bitstreams.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="-443">
+          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="e#302#320#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -429,10 +433,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/coder_output.csv">
+      <provider editor-type-id="csv-text-editor" />
+      <provider selected="true" editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" rowLines="1">
+          <column index="0" width="54" />
+          <column index="1" width="70" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/siggens/train_pulse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
+        <state relative-caret-position="-409">
           <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/envs/scipy_matplot/Lib/site-packages/scipy/signal/signaltools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7905">
+          <caret line="490" column="28" lean-forward="true" selection-start-line="490" selection-start-column="28" selection-end-line="490" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/setup.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/analysis.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="24" selection-start-line="14" selection-end-line="14" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -443,15 +477,25 @@
         </state>
       </provider>
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="311">
-          <caret line="29" column="84" lean-forward="true" selection-start-line="29" selection-start-column="84" selection-end-line="29" selection-end-column="84" />
+        <state relative-caret-position="391">
+          <caret line="38" column="87" lean-forward="true" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="97" column="34" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+        <state relative-caret-position="177">
+          <caret line="71" column="65" lean-forward="true" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
         </state>
       </provider>
     </entry>
