@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="073aaf8e-4880-4193-b87a-7fcb1a82fe06" name="Default Changelist" comment="timedomain and correlation domain plots implemented, only a fragment of the code period appears in plot over t axis">
+    <list default="true" id="073aaf8e-4880-4193-b87a-7fcb1a82fe06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cfg/plotting.cnf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/analytic_plots.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/coding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/coding.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cfg/analysis.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/cfg/analysis.cnf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/state_output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/state_output.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cfg/setup.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/cfg/setup.cnf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/setup.py" afterDir="false" />
     </list>
@@ -15,62 +19,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.62527883">
+    <splitter split-orientation="horizontal" split-proportion="0.57650274">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/run.py">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/utils/analytic_plots.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="177">
-                  <caret line="71" column="65" lean-forward="true" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
+                <state relative-caret-position="356">
+                  <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/siggens/train_pulse.py">
+            <entry file="file://$PROJECT_DIR$/src/utils/setup.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-409">
-                  <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/siggens/one_pulse.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/utils/csv_interfaces.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" selection-start-line="14" selection-end-line="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/siggens/PRN_bitstreams.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-443">
-                  <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+                <state relative-caret-position="308">
+                  <caret line="131" column="48" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="48" />
                   <folding>
-                    <element signature="e#302#320#0" expanded="true" />
+                    <element signature="e#0#19#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/log/run.log">
-              <provider selected="true" editor-type-id="LogFileEditorProvider">
-                <state relative-caret-position="391">
-                  <caret line="38" column="87" lean-forward="true" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/run.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="154">
+                  <caret line="114" column="42" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
                 </state>
               </provider>
             </entry>
@@ -80,22 +57,10 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/utils/setup.py">
+            <entry file="file://$PROJECT_DIR$/cfg/plotting.cnf">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="97" column="34" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="34" />
-                  <folding>
-                    <element signature="e#0#19#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/cfg/setup.cnf">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="56">
-                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+                <state relative-caret-position="102">
+                  <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -103,19 +68,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cfg/analysis.cnf">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="24" selection-start-line="14" selection-end-line="14" selection-end-column="24" />
+                <state relative-caret-position="255">
+                  <caret line="15" selection-start-line="15" selection-end-line="15" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/data/coder_output.csv">
-              <provider editor-type-id="csv-text-editor" />
-              <provider selected="true" editor-type-id="csv-table-editor">
-                <state showInfoPanel="true" rowLines="1">
-                  <column index="0" width="54" />
-                  <column index="1" width="70" />
+            <entry file="file://$PROJECT_DIR$/cfg/setup.cnf">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -140,7 +103,6 @@
       <list>
         <option value="$PROJECT_DIR$/data/test_data.csv" />
         <option value="$PROJECT_DIR$/cfg/log.cnf" />
-        <option value="$PROJECT_DIR$/cfg/setup.cnf" />
         <option value="$PROJECT_DIR$/src/setup.py" />
         <option value="$PROJECT_DIR$/src/utils/csv_interfaces.py" />
         <option value="$PROJECT_DIR$/data/state_output.csv" />
@@ -149,7 +111,10 @@
         <option value="$PROJECT_DIR$/src/siggens/one_pulse.py" />
         <option value="$PROJECT_DIR$/src/siggens/train_pulse.py" />
         <option value="$PROJECT_DIR$/cfg/analysis.cnf" />
+        <option value="$PROJECT_DIR$/cfg/setup.cnf" />
         <option value="$PROJECT_DIR$/src/utils/setup.py" />
+        <option value="$PROJECT_DIR$/src/utils/analytic_plots.py" />
+        <option value="$PROJECT_DIR$/cfg/plotting.cnf" />
         <option value="$PROJECT_DIR$/src/run.py" />
       </list>
     </option>
@@ -324,14 +289,21 @@
       <option name="project" value="LOCAL" />
       <updated>1546348300276</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ploting and signaling fully implemented">
+      <created>1546362311407</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1546362311407</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47674417" weight="0.18364312" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47674417" visible="true" weight="0.18364312" />
       <window_info id="Structure" order="1" sideWeight="0.5232558" side_tool="true" weight="0.18364312" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -344,30 +316,11 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32980132" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.43046358" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.33642384" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.47674417" visible="true" weight="0.18364312" />
-      <window_info id="Structure" order="1" sideWeight="0.5232558" side_tool="true" weight="0.18364312" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32980132" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32980132" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32980132" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.43046358" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ssrg recursion generator working" />
@@ -377,7 +330,8 @@
     <MESSAGE value="synch" />
     <MESSAGE value="ssrg configuration and initialization via cnf file implemented" />
     <MESSAGE value="timedomain and correlation domain plots implemented, only a fragment of the code period appears in plot over t axis" />
-    <option name="LAST_COMMIT_MESSAGE" value="timedomain and correlation domain plots implemented, only a fragment of the code period appears in plot over t axis" />
+    <MESSAGE value="ploting and signaling fully implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="ploting and signaling fully implemented" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../Anaconda3/envs/scipy_matplot/Lib/configparser.py" />
@@ -400,13 +354,6 @@
     <entry file="file://$PROJECT_DIR$/../unob2018-master/unob2018-master/sim/python/siggens/train_pulse.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/csv_interfaces.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/state_output.csv">
       <provider editor-type-id="csv-text-editor" />
       <provider selected="true" editor-type-id="csv-table-editor">
@@ -416,20 +363,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/siggens/PRN_bitstreams.py">
+    <entry file="file://$USER_HOME$/Anaconda3/envs/scipy_matplot/Lib/site-packages/scipy/signal/signaltools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-443">
-          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          <folding>
-            <element signature="e#302#320#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="7905">
+          <caret line="490" column="28" lean-forward="true" selection-start-line="490" selection-start-column="28" selection-end-line="490" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/siggens/one_pulse.py">
+    <entry file="file://$PROJECT_DIR$/src/siggens/train_pulse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        <state relative-caret-position="442">
+          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -442,60 +386,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/siggens/train_pulse.py">
+    <entry file="file://$PROJECT_DIR$/src/siggens/PRN_bitstreams.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-409">
-          <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
+        <state relative-caret-position="510">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="e#302#320#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/scipy_matplot/Lib/site-packages/scipy/signal/signaltools.py">
+    <entry file="file://$PROJECT_DIR$/src/utils/csv_interfaces.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7905">
-          <caret line="490" column="28" lean-forward="true" selection-start-line="490" selection-start-column="28" selection-end-line="490" selection-end-column="28" />
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cfg/setup.cnf">
+    <entry file="file://$PROJECT_DIR$/src/siggens/one_pulse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="408">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cfg/analysis.cnf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="24" selection-start-line="14" selection-end-line="14" selection-end-column="24" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/setup.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log/run.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="68">
+          <caret line="4" column="92" lean-forward="true" selection-start-line="4" selection-start-column="92" selection-end-line="4" selection-end-column="92" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="391">
-          <caret line="38" column="87" lean-forward="true" selection-start-line="38" selection-start-column="87" selection-end-line="38" selection-end-column="87" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="97" column="34" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="34" />
+        <state relative-caret-position="308">
+          <caret line="131" column="48" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="48" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/analytic_plots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cfg/plotting.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="71" column="65" lean-forward="true" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
+        <state relative-caret-position="154">
+          <caret line="114" column="42" selection-start-line="114" selection-start-column="42" selection-end-line="114" selection-end-column="42" />
         </state>
       </provider>
     </entry>

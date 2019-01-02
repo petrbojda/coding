@@ -19,7 +19,8 @@ coder_output_filename: coder_output.csv
 logger_filename: run.log
 config_filename: analysis.cnf
 setup_filename: setup.cnf
-logger_config_filename: log.cnf
+plotting_filename: plotting.cnf
+
 
 ############### setting parameters of the logger ########
 [loggers]

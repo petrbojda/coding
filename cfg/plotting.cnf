@@ -1,0 +1,9 @@
+# Configuration file for the SSRG and code analysis.
+# Created as a part of the project at the University of Defence, Czech Republic
+# by Petr Bojda, 12-27-2018.
+
+[plotting]
+plotting_switch = on
+save_plots = on
+show_plots = on
+plot_saving_format = png

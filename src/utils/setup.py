@@ -32,14 +32,16 @@ def setup_cnf_file_parser(cnf_file):
     # Read a name of the cnf file to setup basic paths to files
     filename_setup = config.get('filenames', 'setup_filename')
     # Read a name of the cnf file to configure logger
-    filename_log_cnf = config.get('filenames', 'logger_config_filename')
+    filename_plt_cnf = config.get('filenames', 'plotting_filename')
 
     setup_data = {"srcpy": path_home + path_srcpy,
+                  "data_path": path_home + path_data,
                   "data_state": path_home + path_data + filename_state,
                   "data_code": path_home + path_data + filename_code,
                   "setup":path_home + path_cnf + filename_setup,
                   "cnf": path_home + path_cnf + filename_cnf,
-                  "log": path_home + path_log + filename_log}
+                  "log": path_home + path_log + filename_log,
+                  "plt": path_home + path_cnf + filename_plt_cnf}
     return setup_data
 
 
@@ -99,3 +101,36 @@ def analysis_cnf_file_parser(cnf_file):
 
     return analysis_setup
 
+
+def plotting_cnf_file_parser(cnf_file):
+    # Reads the configuration file
+    config = configparser.ConfigParser()
+    config.read(cnf_file)  # "../plotting.cnf"
+
+    plotting_switch = config.get('plotting', 'plotting_switch').lower()
+    save_plots = config.get('plotting', 'save_plots').lower()
+    show_plots = config.get('plotting', 'show_plots').lower()
+    plot_saving_format = config.get('plotting', 'plot_saving_format').lower()
+
+    if plotting_switch == 'on':
+        plotting_switch_b = True
+    else:
+        plotting_switch_b = False
+
+    if save_plots == 'on':
+        save_plots_b = True
+    else:
+        save_plots_b = False
+
+    if show_plots == 'on':
+        show_plots_b = True
+    else:
+        show_plots_b = False
+
+
+    plotting_setup = {"plotting": plotting_switch_b,
+                      "save_plots": save_plots_b,
+                      "show_plots": show_plots_b,
+                      "plot_saving_format": plot_saving_format}
+
+    return plotting_setup
