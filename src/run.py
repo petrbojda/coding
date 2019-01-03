@@ -15,6 +15,7 @@ from utils import setup as stp
 from utils import analytic_plots as aplt
 from siggens import train_pulse as gen
 from siggens import PRN_bitstreams as prn
+from dsp import corrNumpy as ncorr
 
 
 # class NoLoggerConfiguration(Exception): pass
@@ -70,9 +71,12 @@ def main(setup_data):
     t = np.arange(0, T_int, 1 / f_sampl)  # time axis
     logger.debug("time axis created, length  %s samples", t.size)
 
-    # f = ut.freq_fr_time (t)				# frequency axis
+    f = ut.freq_fr_time(t)				# frequency axis
+    logger.debug("frequency axis for spectral analysis, length  %s", f.size)
     tc = ut.corr_fr_time(t)  # correlation time axis
     logger.debug("time axis correlation created, length  %s samples", tc.size)
+    tc_h = ut.corr_fr_halftime(t)  # correlation time axis
+    logger.debug("half time axis correlation created, length  %s samples", tc_h.size)
 
     tau = analysis_setup["time_accelerating_factor"]  # time acceleration factor
     logger.debug("time acceleration factor is %s", tau)
@@ -86,9 +90,16 @@ def main(setup_data):
     # a2 = gen.rcos_tr(t, Tstr, td + Tstr / 2, x, Ts, 0.5)
     # a3 = gen.rcos_tr(t, Tstr, td + Tstr / 2, x, Ts, 0.0)
     c = gen.rect_tr(t, Tstr, 0, td, code)
+    logger.debug("Oversampled signal with rectangular pulse shape created, number of samples %s", c.size)
 
     # Correlate processor
-    A1_c = signal.correlate(c, c, 'full')
+    c_con = np.concatenate((c,c))
+    A1_c = ncorr.corr_fd(c, c, )
+    # A1_c = signal.correlate(c, c_con, 'full', 'fft')
+    # A1_c = signal.convolve(c, c, 'full')
+    # A1_c = signal.fftconvolve(c, c, 'full')
+    # A1_c = np.real(np.fft.ifft( np.fft.fft(c)*np.fft.fft(c) ))
+    logger.debug("Autocorrelation function calculated, number of samples %s", A1_c.size)
 
     ##################### Plots ###########################
     plotting_setup = stp.plotting_cnf_file_parser(setup_data["plt"])
@@ -115,7 +126,8 @@ def main(setup_data):
                  "y_label":"$C_{xx}(\\tau)$",
                  "x_label":"time [ms]"}
         # figure_axes = [-0.25, 0.25, -100, 253000]
-        aplt.timedomain_plot(f1ax2, tc, A1_c,texts=texts)
+        tc_con = np.concatenate((tc,t))
+        aplt.timedomain_plot(f1ax2, f, A1_c, texts=texts)
 
         if plotting_setup["show_plots"]:
             # f1.show()

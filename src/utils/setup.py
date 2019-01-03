@@ -127,10 +127,8 @@ def plotting_cnf_file_parser(cnf_file):
     else:
         show_plots_b = False
 
-
     plotting_setup = {"plotting": plotting_switch_b,
                       "save_plots": save_plots_b,
                       "show_plots": show_plots_b,
                       "plot_saving_format": plot_saving_format}
-
     return plotting_setup
