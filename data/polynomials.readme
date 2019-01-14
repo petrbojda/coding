@@ -1,0 +1,138 @@
+  From the following tables all irreducible polynomials of degree
+        16 or less over GF(2) can be found, and certain of their properties
+        and relations among them are given.  A primitive polynomial with
+        a minimum number of nonzero coefficients and polynomials be-
+        longing to all possible exponents is given for each degree 17
+        through 34.
+
+           Polynomials are given in an octal representation.  Each digit in
+        the table represents three binary digits according to the following
+        code:
+                    0    0 0 0       2    0 1 0     4    1 0 0      6   1 1 0
+                    1    0 0 1       3    0 1 1     5    1 0 1      7   1 1 1
+
+        The binary digits then are   the coefficients of the polynomial, with
+        the high-order coefficients at the left.  For example, 3525 is listed
+        as a loth-degree polynomial.  The binary equivalent of 3525 is
+        0 1 1 1 0 1 0 1 0 1 0 1, and the corresponding polynomial is
+        X10 + X9 + X8 + X6 + X4 + X2 + 1.
+
+           The reciprocal polynomial of an irreducible polynomial is also
+        irreducible, and the reciprocal polynomial of a primitive poly-
+        nomial is primitive.  Of any pair consisting of a polynomial and
+        its reciprocal polynomial, only one is listed in the table.  Each
+        entry that is followed by a letter in the table is an irreducible
+        polynomial of the indicated degree.  For degree 2 through 16,
+        these polynomials along with their reciprocal polynomials com-
+        prise all irreducible polynomials of that degree.
+
+          The letters  following the octal representation give the following
+        information:
+
+         A, B, C, D    Not primitive
+         E, F, G, H    Primitive
+         A, B, E, F    The roots  are linearly dependent
+         C, D, G, H    The roots  are linearly independent
+         A, C, E, G    The roots  of the reciprocal polynomial are linearly
+                       dependent
+         B, D, F, H    The roots of the reciprocal polynomial are linearly
+                       independent
+
+          The other numbers in the table tell the relation between the poly-
+        nomials.  For each degree, a primitive polynomial with a minimum
+        number of nonzero coefficients was chosen, and this polynomial
+        is the first in the table of polynomials of this degree.  Let a denote
+        one of its roots.  Then the entry following j in the table is the
+        minimum polynomial of aj.  The polynomials are included for
+        each j unless for some i < j either ai and aj are roots of the
+        same irreducible polynomial or ai and a-j are roots of the same
+        polynomial.  The minimum polynomial of aj is included even if it
+        has smaller degree than is indicated for that section of the table;
+        such polynomials are not followed by a letter in the table.
+
+
+         Examples: The primitive polynomial (103), or X6 + X + 1 = p(X)
+         is the first entry in the table of 6th-degree irreducible polyno-
+         mials. If a designates a root of p(X), then a  3  is a root of
+         (127) and a5 is a root of (147).  The minimum polynomial of
+         a9 is (015) = X3 + X2 + 1, and is of degree 3 rather than 6.
+
+          There is no entry corresponding to a17.  The other roots of
+         the minimum polynomial of   a17  are  a34, a68  = a5, a10, a20,
+         and a40. Thus the minimum polynomial of a17  is the same as
+         the minimum polynomial of a5 , or (147).  There is no entry
+         corresponding to a13.  The other roots of the minimum poly-
+         nomial  p13(X) of  a13  are a26, a52, a104 =  a41, a82 = a19 , and
+         a38  .  None of these is listed. The roots of the reciprocal poly-
+         nomial P13*(X) of P13(X) are a-13 = a50, a-26 =  a37,  a-52 =
+         all, a-41  = a22,  a-19 = a44  and a-38  = a25.  The minimum poly-
+         nomial of all is listed as (155) or X6 + X5 + X3 + X2 + 1. The
+         minimum polynomial of a13  is the reciprocal polynomial of this,
+         or p13(X) = X6 + X4 + X3 + X + 1.
+
+
+         The exponent to which a polynomial belongs can be found as
+      follows: If a is a primitive element of GF(2m), then the order
+      e of aj is
+                 e = (2m-1)/GCD(2m-1, j)
+
+      and e is also the exponent to which the minimum function of aj
+      belongs.  Thus, for example, in GF(210), a55 has order 93, since
+
+                 93 = 1023/GCD(1023, 55) = 1023/11
+
+      Thus the polynomial (3453) belongs to 93.
+
+         Marsh has published a table of all irreducible polynomials of
+      degree 19 or less over GF(2).  In this table the polynomials are
+      arranged in lexicographical order; this is the most convenient
+      form for determining whether or not a given polynomial is ir-
+      reducible.
+
+         For degree 19 or less, the minimum-weight polynomials given
+      in this table were found in Marsh's tables.  For degree 19 through
+      34, the minimum-weight polynomial was found by a trial-and-error
+      process in which each polynomial of weight 3, then 5, was tested.
+      The following procedure was used to test whether a polynomial
+      f(X) of degree m is primitive.
+
+          1. The residues of 1, X, X2, X4, ... , X2m-1 are formed
+      modulo f(X).
+
+          2. These are multiplied and reduced modulo f(X) to form the
+      residue of X2m-1.  If the result is not 1, the polynomial is rejected.
+      If the result is 1, the test is continued.
+
+          3. For each factor r of 2m-1, the residue of  Xr  is formed by
+      multiplying together an appropriate combination of the residues
+      formed in Step 1. If none of these is 1, the polynomial is primitive.
+
+
+          Each other polynomial in the table was found by solving for the
+      dependence relations among its roots by the method illustrated at
+      the end of Section 8.1 in Peterson.
+
+
+ Table Factorization of  2m-1 into Primes
+
+      23  - 1  =  7                219 - 1  =  524287
+      24  - 1  =  3x5              220 - 1  =  3x5x5xl1x31x41
+      25  - 1  =  31               221 - 1  =  7X7X127x337
+      26  - 1  =  3x3x7            222 - 1  =  3x23x89x683
+
+      27  - 1  =  127              223 - 1  =  47x178481
+      28  - 1  =  3x5x17           224 - 1  =  3x3x5x7x13x17x241
+      29  - 1  =  7x73             225 - 1  =  31x601x1801
+      210 - 1  =  3x11x3           226 - 1  =  3x2731x8191
+
+      211 - 1  =  23x89            227 - 1  =  7x73x262657
+      212 - 1  =  3x3x5x7x13       228 - 1  =  3x5x29x43x113x127
+      213 - 1  =  8191             229 - 1  =  233x1103x2089
+      214 - 1  =  3x43x127         230 - 1  =  3x3x7x11x31x151x331
+
+      215 - 1  =  7x31x15          231 - 1  =  2147483647
+      216 - 1  =  3x5x17x257       232 - 1  =  3x5x17x257x65537
+      217 - 1  =  131071           233 - 1  =  7x23x89x599479
+      218 - 1  =  3x3x3x7xl9x73    234 - 1  =  3x43691x131071
+
+
